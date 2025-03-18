@@ -1,5 +1,4 @@
-﻿using Application.Contracts;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Persistence.Behaviours.Norse;
 using Persistence.Creational;
 using Persistence.EF.Entities;
@@ -42,14 +41,18 @@ namespace Persistence.EF.Repositories
             await context.SaveChangesAsync();
         }
 
-        public async Task<List<WeatherForecast>> GetAll()
+        public async Task<List<IWeatherForecastEntity>> GetAll()
         {
-            return await _table.Select(s => new WeatherForecast()
-            {
-                Summary = s.Summary,
-                TemperatureC = s.TemperatureC,
-                Date = s.Date,
-            }).ToListAsync();
+            var result = await _table.Select(s => 
+                new WeatherForecastEntity
+                {
+                    Id = s.Id,
+                    Summary = s.Summary,
+                    TemperatureC = s.TemperatureC
+                }).ToListAsync<IWeatherForecastEntity>();
+
+            return result;
+
         }
     }
 

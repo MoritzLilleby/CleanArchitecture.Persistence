@@ -1,4 +1,4 @@
-﻿using Application.Contracts;
+﻿using Persistence.EF.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +9,6 @@ namespace Persistence.Contracts
 {
     public interface IWeatherForecastRepository
     {
-        Task<List<WeatherForecast>> GetAll();
+        Task<List<IWeatherForecastEntity>> GetAll();
     }
 }

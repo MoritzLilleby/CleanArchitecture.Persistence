@@ -1,6 +1,6 @@
 ﻿using Dapper;
-using Application.Contracts;
 using Persistence.Dapper.Repositories.Interfaces;
+using Persistence.EF.Entities;
 
 namespace Persistence.Dapper.Repositories
 {
@@ -16,13 +16,13 @@ namespace Persistence.Dapper.Repositories
             throw new NotImplementedException();
         }
 
-        public async Task<List<WeatherForecast>> GetAll()
+        public async Task<List<IWeatherForecastEntity>> GetAll()
         {
             var query = "SELECT * FROM WeatherForeCast";
             using (var connection = context.CreateConnection())
             {
-                var result = await connection.QueryAsync<WeatherForecast>(query);
-                return result.ToList();
+                var result = await connection.QueryAsync<WeatherForecastEntity>(query);
+                return result.ToList<IWeatherForecastEntity>();
             }
         }
     }
