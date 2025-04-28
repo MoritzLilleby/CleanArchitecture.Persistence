@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using Persistence.Creational;
 using Persistence.Dapper.Repositories.Interfaces;
 using Persistence.EF.Entities;
 
@@ -8,12 +9,54 @@ namespace Persistence.Dapper.Repositories
     {
         public Task CreateGreekWeather()
         {
-            throw new NotImplementedException();
+
+            var table = new WeatherForecastEntity();
+            table.CreateId();
+
+            var factory = new GreekWeatherGodVisitorFactory();
+            var greekGod = factory.CreateRandomWeatherGodVisitor();
+
+            table.Accept(greekGod);
+
+            var insert = "INSERT INTO WeatherForecast(Id, Date, TemperatureC, Summary) " +
+             "VALUES(@Id, @Date, @TemperatureC, @Summary)";
+
+            using (var connection = context.CreateConnection())
+            {
+                connection.Execute(insert, table);
+            }
+
+            return Task.CompletedTask;
         }
 
         public Task CreateNorseWeather()
         {
-            throw new NotImplementedException();
+
+            var table = new WeatherForecastEntity();
+            table.CreateId();
+            //Same file?
+
+            var factory = new NorseWeatherGodVisitorFactory();
+            var norseGod = factory.CreateRandomWeatherGodVisitor();
+
+            table.Accept(norseGod);
+
+            //var theAllFather = new Odin();
+            //var ravens = theAllFather.CallRavens();
+            //ravens.Observe(norseGod);
+
+            //Here we are using the same table as in CreateGreekWeather
+
+            var insert = "INSERT INTO WeatherForecast(Id, Date, TemperatureC, Summary) " +
+             "VALUES(@Id, @Date, @TemperatureC, @Summary)";
+
+            using (var connection = context.CreateConnection())
+            {
+                connection.Execute(insert, table);
+            }
+
+            return Task.CompletedTask;
+
         }
 
         public async Task<List<IWeatherForecastEntity>> GetAll()

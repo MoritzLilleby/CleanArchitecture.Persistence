@@ -12,13 +12,23 @@ namespace Persistence.EF.Entities
 
     internal class WeatherForecastEntity : IWeatherForecastEntity
     {
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
         public DateOnly Date { get; set; }
 
         public int TemperatureC { get; set; }
 
         public string? Summary { get; set; }
 
+
+        public void SetId(Guid _Id) 
+        {
+            Id = _Id;
+        }
+
+        public void CreateId() 
+        {
+            //Id = Guid.NewGuid();
+        }
 
         public void Accept(IWeatherGodVisitor visitor)
         {

@@ -46,7 +46,6 @@ namespace Persistence.EF.Repositories
             var result = await _table.Select(s => 
                 new WeatherForecastEntity
                 {
-                    Id = s.Id,
                     Summary = s.Summary,
                     TemperatureC = s.TemperatureC
                 }).ToListAsync<IWeatherForecastEntity>();
