@@ -1,14 +1,14 @@
-﻿using Dapper;
+﻿using CleanArchitecture.Persistence.Dapper;
+using CleanArchitecture.Persistence.Dapper.Extensions;
+using CleanArchitecture.Persistence.Dapper.Repositories.Interfaces;
+using CleanArchitecture.Persistence.EF;
+using CleanArchitecture.Persistence.EF.Repositories.interfaces;
+using Dapper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Persistence.Dapper;
-using Persistence.Dapper.Extensions;
-using Persistence.Dapper.Repositories.Interfaces;
-using Persistence.EF;
-using Persistence.EF.Repositories.interfaces;
 
-namespace Persistence
+namespace CleanArchitecture.Persistence
 {
     public static class PersistenceServiceExtensions
     {
@@ -24,7 +24,7 @@ namespace Persistence
 
             services.AddScoped<IEFWeatherforecastRepository, EF.Repositories.WeatherForecastRepository>();
 
-            
+
             // DAPPER CORE
             services.AddSingleton<IDapperContext, DapperContext>(provider =>
             {

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Persistence.EF.Entities
+﻿namespace CleanArchitecture.Persistence.EF.Entities
 {
     internal class GodEntity
     {

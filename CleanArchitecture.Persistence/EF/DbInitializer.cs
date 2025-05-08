@@ -1,8 +1,8 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using CleanArchitecture.Persistence.Contracts;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Persistence.EF.Entities;
 
-namespace Persistence.EF
+namespace CleanArchitecture.Persistence.EF
 {
     public class DbInitializer
     {
@@ -20,7 +20,7 @@ namespace Persistence.EF
 
                 var weatherForcastTable = context.Set<WeatherForecastEntity>();
 
-                // Look for any students.
+                // Look for any weathergods.
                 if (weatherForcastTable.Any())
                 {
                     return;   // DB has been seeded

@@ -1,9 +1,9 @@
-﻿using Dapper;
-using Persistence.Creational;
-using Persistence.Dapper.Repositories.Interfaces;
-using Persistence.EF.Entities;
+﻿using CleanArchitecture.Persistence.Contracts;
+using CleanArchitecture.Persistence.Creational;
+using CleanArchitecture.Persistence.Dapper.Repositories.Interfaces;
+using Dapper;
 
-namespace Persistence.Dapper.Repositories
+namespace CleanArchitecture.Persistence.Dapper.Repositories
 {
     public class WeatherForecastRepository(IDapperContext context) : IDPWeatherForecastRepository
     {

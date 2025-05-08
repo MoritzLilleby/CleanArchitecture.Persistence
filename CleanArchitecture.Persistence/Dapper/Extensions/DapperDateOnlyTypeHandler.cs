@@ -1,12 +1,7 @@
 ﻿using Dapper;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Persistence.Dapper.Extensions
+namespace CleanArchitecture.Persistence.Dapper.Extensions
 {
     internal class DapperDateOnlyTypeHandler : SqlMapper.TypeHandler<DateOnly>
     {

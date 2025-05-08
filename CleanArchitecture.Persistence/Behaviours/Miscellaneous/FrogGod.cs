@@ -1,13 +1,8 @@
-﻿using Persistence.EF.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CleanArchitecture.Persistence.Contracts;
 
-namespace Persistence.Behaviours.Miscellaneous
+namespace CleanArchitecture.Persistence.Behaviours.Miscellaneous
 {
-    internal class FrogGod : IWeatherFrogGodVisitor
+    internal class FrogGod : IWeatherGodVisitor
     {
         public void Visit(WeatherForecastEntity weatherForecast)
         {

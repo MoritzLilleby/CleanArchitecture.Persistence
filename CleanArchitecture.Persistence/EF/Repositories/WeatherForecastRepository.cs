@@ -1,10 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Persistence.Behaviours.Norse;
-using Persistence.Creational;
-using Persistence.EF.Entities;
-using Persistence.EF.Repositories.interfaces;
+﻿using CleanArchitecture.Persistence.Behaviours.Norse;
+using CleanArchitecture.Persistence.Contracts;
+using CleanArchitecture.Persistence.Creational;
+using CleanArchitecture.Persistence.EF.Repositories.interfaces;
+using Microsoft.EntityFrameworkCore;
 
-namespace Persistence.EF.Repositories
+namespace CleanArchitecture.Persistence.EF.Repositories
 {
 
     internal class WeatherForecastRepository(IWeatherForecastContext context) : IEFWeatherforecastRepository
@@ -43,7 +43,7 @@ namespace Persistence.EF.Repositories
 
         public async Task<List<IWeatherForecastEntity>> GetAll()
         {
-            var result = await _table.Select(s => 
+            var result = await _table.Select(s =>
                 new WeatherForecastEntity
                 {
                     Summary = s.Summary,

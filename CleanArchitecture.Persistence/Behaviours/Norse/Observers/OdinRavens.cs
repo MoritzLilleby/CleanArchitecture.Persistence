@@ -1,12 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
-using Persistence.Behaviours.Greek;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CleanArchitecture.Persistence.Contracts;
 
-namespace Persistence.Behaviours.Norse.Observers
+namespace CleanArchitecture.Persistence.Behaviours.Norse.Observers
 {
     internal class OdinRavens : IObservable<IWeatherGodVisitor>
     {

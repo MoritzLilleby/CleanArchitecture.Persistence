@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Persistence.EF.Entities;
+﻿using CleanArchitecture.Persistence.Contracts;
+using Microsoft.EntityFrameworkCore;
 
-namespace Persistence.EF
+namespace CleanArchitecture.Persistence.EF
 {
     public interface IWeatherForecastContext
     {

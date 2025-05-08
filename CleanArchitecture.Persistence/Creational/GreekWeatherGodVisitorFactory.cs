@@ -1,6 +1,7 @@
-﻿using Persistence.Behaviours.Greek;
+﻿using CleanArchitecture.Persistence.Behaviours.Greek;
+using CleanArchitecture.Persistence.Contracts;
 
-namespace Persistence.Creational
+namespace CleanArchitecture.Persistence.Creational
 {
     internal class GreekWeatherGodVisitorFactory : ICreateWeatherGodVisitor
     {

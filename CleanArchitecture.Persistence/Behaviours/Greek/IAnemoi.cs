@@ -1,6 +1,6 @@
-﻿using Persistence.EF.Entities;
+﻿using CleanArchitecture.Persistence.Contracts;
 
-namespace Persistence.Behaviours.Greek
+namespace CleanArchitecture.Persistence.Behaviours.Greek
 {
     internal interface IAnemoi
     {

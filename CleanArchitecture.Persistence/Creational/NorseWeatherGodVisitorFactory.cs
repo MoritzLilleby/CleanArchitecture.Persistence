@@ -1,7 +1,7 @@
-﻿using Persistence.Behaviours.Greek;
-using Persistence.Behaviours.Norse;
+﻿using CleanArchitecture.Persistence.Behaviours.Norse;
+using CleanArchitecture.Persistence.Contracts;
 
-namespace Persistence.Creational
+namespace CleanArchitecture.Persistence.Creational
 {
     internal class NorseWeatherGodVisitorFactory : ICreateWeatherGodVisitor
     {

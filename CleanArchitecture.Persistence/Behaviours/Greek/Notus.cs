@@ -1,11 +1,6 @@
-﻿using Persistence.EF.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CleanArchitecture.Persistence.Contracts;
 
-namespace Persistence.Behaviours.Greek
+namespace CleanArchitecture.Persistence.Behaviours.Greek
 {
     internal class Notus : Anemoi
     {

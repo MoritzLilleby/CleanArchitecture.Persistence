@@ -1,13 +1,7 @@
-﻿using Persistence.Behaviours.Greek;
-using Persistence.Behaviours.Norse.Observers;
-using Persistence.EF.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CleanArchitecture.Persistence.Behaviours.Norse.Observers;
+using CleanArchitecture.Persistence.Contracts;
 
-namespace Persistence.Behaviours.Norse
+namespace CleanArchitecture.Persistence.Behaviours.Norse
 {
     internal class Odin : IWeatherGodVisitor, IObserver<IWeatherGodVisitor>
     {

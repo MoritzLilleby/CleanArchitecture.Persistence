@@ -1,11 +1,6 @@
-﻿using Persistence.Behaviours.Greek;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CleanArchitecture.Persistence.Contracts;
 
-namespace Persistence.Creational
+namespace CleanArchitecture.Persistence.Creational
 {
     internal interface ICreateWeatherGodVisitor
     {

@@ -1,6 +1,5 @@
-﻿using Persistence.Behaviours.Greek;
-
-namespace Persistence.EF.Entities
+﻿
+namespace CleanArchitecture.Persistence.Contracts
 {
     public interface IWeatherForecastEntity
     {
@@ -13,21 +12,19 @@ namespace Persistence.EF.Entities
     internal class WeatherForecastEntity : IWeatherForecastEntity
     {
         public Guid Id { get; private set; }
-        public DateOnly Date { get; set; }
+        public DateOnly Date { get; internal set; }
 
         public int TemperatureC { get; set; }
-
         public string? Summary { get; set; }
 
-
-        public void SetId(Guid _Id) 
+        public void SetId(Guid _Id)
         {
             Id = _Id;
         }
 
-        public void CreateId() 
+        public void CreateId()
         {
-            //Id = Guid.NewGuid();
+            Id = Guid.NewGuid();
         }
 
         public void Accept(IWeatherGodVisitor visitor)
@@ -36,4 +33,7 @@ namespace Persistence.EF.Entities
         }
 
     }
+
+
+
 }

@@ -1,11 +1,6 @@
-﻿using Persistence.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CleanArchitecture.Persistence.Contracts;
 
-namespace Persistence.EF.Repositories.interfaces
+namespace CleanArchitecture.Persistence.EF.Repositories.interfaces
 {
     public interface IEFWeatherforecastRepository : IWeatherForecastRepository
     {

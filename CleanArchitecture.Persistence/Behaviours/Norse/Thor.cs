@@ -1,12 +1,6 @@
-﻿using Persistence.Behaviours.Greek;
-using Persistence.EF.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CleanArchitecture.Persistence.Contracts;
 
-namespace Persistence.Behaviours.Norse
+namespace CleanArchitecture.Persistence.Behaviours.Norse
 {
     internal class Thor : IWeatherGodVisitor
     {
