@@ -2,6 +2,7 @@
 using CleanArchitecture.Persistence.Creational;
 using CleanArchitecture.Persistence.Dapper.Repositories.Interfaces;
 using Dapper;
+using System.Data;
 
 namespace CleanArchitecture.Persistence.Dapper.Repositories
 {
@@ -68,5 +69,31 @@ namespace CleanArchitecture.Persistence.Dapper.Repositories
                 return result.ToList<IWeatherForecastEntity>();
             }
         }
+
+
+        public void InsertOrUpdateList(IEnumerable<IWeatherForecastEntity> myList)
+        {
+            using (var connection = context.CreateConnection())
+            {
+                var dt = new DataTable();
+                dt.Columns.Add("Id", typeof(Guid));
+                dt.Columns.Add("Date", typeof(DateTime));
+                dt.Columns.Add("TemperatureC", typeof(int));
+                dt.Columns.Add("Summary", typeof(string));
+
+                foreach (var item in myList)
+                {
+                    dt.Rows.Add(item.Id, item.Date, item.TemperatureC, item.Summary);
+                }
+
+                var parameters = new DynamicParameters();
+                parameters.Add("@MyObjects", dt.AsTableValuedParameter("dbo.WeatherForecastType"));
+
+                connection.Execute("dbo.UpdateWeatherGodForecast", parameters, commandType: CommandType.StoredProcedure);
+            }
+        }
+
+
+
     }
 }

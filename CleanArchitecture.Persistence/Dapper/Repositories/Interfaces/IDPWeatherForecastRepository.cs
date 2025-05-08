@@ -6,5 +6,7 @@ namespace CleanArchitecture.Persistence.Dapper.Repositories.Interfaces
     {
         Task CreateGreekWeather();
         Task CreateNorseWeather();
+
+        public void InsertOrUpdateList(IEnumerable<IWeatherForecastEntity> myList);
     }
 }
