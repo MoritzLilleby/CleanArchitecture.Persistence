@@ -3,7 +3,7 @@ using System.Data;
 
 namespace CleanArchitecture.Persistence.Dapper.Extensions
 {
-    internal class DapperDateOnlyTypeHandler : SqlMapper.TypeHandler<DateOnly>
+    public class DapperDateOnlyTypeHandler : SqlMapper.TypeHandler<DateOnly>
     {
         public override void SetValue(IDbDataParameter parameter, DateOnly value)
         {

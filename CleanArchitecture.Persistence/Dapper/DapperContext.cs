@@ -1,6 +1,8 @@
 ﻿using Microsoft.Data.SqlClient;
 using System.Data;
 
+using System.Runtime.CompilerServices;
+[assembly: InternalsVisibleTo("CleanArchitecture.Persistence.IntegrationTest")]
 namespace CleanArchitecture.Persistence.Dapper
 {
     public interface IDapperContext

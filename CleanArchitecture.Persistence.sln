@@ -5,6 +5,8 @@ VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.Persistence", "CleanArchitecture.Persistence\CleanArchitecture.Persistence.csproj", "{DE468814-C164-41B4-B34C-702E41683612}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.Persistence.IntegrationTest", "CleanArchitecture.Persistence.IntegrationTest\CleanArchitecture.Persistence.IntegrationTest.csproj", "{ECFF0F27-3EFB-40C1-8B4A-5A6A9830436F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{DE468814-C164-41B4-B34C-702E41683612}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE468814-C164-41B4-B34C-702E41683612}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE468814-C164-41B4-B34C-702E41683612}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECFF0F27-3EFB-40C1-8B4A-5A6A9830436F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECFF0F27-3EFB-40C1-8B4A-5A6A9830436F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECFF0F27-3EFB-40C1-8B4A-5A6A9830436F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECFF0F27-3EFB-40C1-8B4A-5A6A9830436F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

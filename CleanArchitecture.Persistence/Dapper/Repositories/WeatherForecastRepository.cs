@@ -1,5 +1,6 @@
 ﻿using CleanArchitecture.Persistence.Contracts;
 using CleanArchitecture.Persistence.Creational;
+using CleanArchitecture.Persistence.Dapper.Extensions;
 using CleanArchitecture.Persistence.Dapper.Repositories.Interfaces;
 using Dapper;
 using System.Data;
@@ -77,13 +78,13 @@ namespace CleanArchitecture.Persistence.Dapper.Repositories
             {
                 var dt = new DataTable();
                 dt.Columns.Add("Id", typeof(Guid));
-                dt.Columns.Add("Date", typeof(DateTime));
+                dt.Columns.Add("Date", typeof(DateTime)); // Changed from DateOnly to DateTime
                 dt.Columns.Add("TemperatureC", typeof(int));
                 dt.Columns.Add("Summary", typeof(string));
 
                 foreach (var item in myList)
                 {
-                    dt.Rows.Add(item.Id, item.Date, item.TemperatureC, item.Summary);
+                    dt.Rows.Add(item.Id, item.Date.ToDateTime(TimeOnly.MinValue), item.TemperatureC, item.Summary); // Convert DateOnly to DateTime
                 }
 
                 var parameters = new DynamicParameters();
@@ -92,6 +93,7 @@ namespace CleanArchitecture.Persistence.Dapper.Repositories
                 connection.Execute("dbo.UpdateWeatherGodForecast", parameters, commandType: CommandType.StoredProcedure);
             }
         }
+
 
 
 

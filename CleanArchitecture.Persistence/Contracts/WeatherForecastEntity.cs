@@ -1,4 +1,5 @@
-﻿
+﻿using System.Runtime.CompilerServices;
+[assembly: InternalsVisibleTo("CleanArchitecture.Persistence.IntegrationTest")]
 namespace CleanArchitecture.Persistence.Contracts
 {
     public interface IWeatherForecastEntity
@@ -8,6 +9,7 @@ namespace CleanArchitecture.Persistence.Contracts
         string? Summary { get; }
         int TemperatureC { get; }
     }
+
 
     internal class WeatherForecastEntity : IWeatherForecastEntity
     {
