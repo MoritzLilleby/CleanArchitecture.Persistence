@@ -5,7 +5,7 @@ using CleanArchitecture.Persistence.Dapper.Repositories;
 namespace CleanArchitecture.Persistence.IntegrationTest
 {
     [TestFixture]
-    public class WeatherForecastRepositoryTests
+    public class DapperWeatherForecastRepositoryTests
     {
         private WeatherForecastRepository _repository;
 

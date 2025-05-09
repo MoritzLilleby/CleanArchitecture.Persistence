@@ -53,6 +53,11 @@ namespace CleanArchitecture.Persistence.EF.Repositories
             return result;
 
         }
+
+        public Task InsertOrUpdateList(IEnumerable<IWeatherForecastEntity> myList)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }
