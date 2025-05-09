@@ -4,9 +4,9 @@ namespace CleanArchitecture.Persistence.Dapper.Repositories.Interfaces
 {
     public interface IDPWeatherForecastRepository : IWeatherForecastRepository
     {
-        Task CreateGreekWeather();
-        Task CreateNorseWeather();
+        //Task CreateGreekWeather();
+        //Task CreateNorseWeather();
 
-        public void InsertOrUpdateList(IEnumerable<IWeatherForecastEntity> myList);
+        //public Task InsertOrUpdateList(IEnumerable<IWeatherForecastEntity> myList);
     }
 }

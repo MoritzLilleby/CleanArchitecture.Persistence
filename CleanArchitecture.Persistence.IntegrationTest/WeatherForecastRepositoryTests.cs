@@ -1,11 +1,6 @@
 using CleanArchitecture.Persistence.Contracts;
 using CleanArchitecture.Persistence.Dapper;
 using CleanArchitecture.Persistence.Dapper.Repositories;
-using Dapper;
-using Moq;
-using System.Data;
-using NUnit.Framework;
-using CleanArchitecture.Persistence.Dapper.Extensions; 
 
 namespace CleanArchitecture.Persistence.IntegrationTest
 {
@@ -18,7 +13,6 @@ namespace CleanArchitecture.Persistence.IntegrationTest
         public void Setup()
         {
             var dapperContext = new DapperContext("Server=localhost;Database=GodWeatherForcast;Trusted_Connection=True;MultipleActiveResultSets=true; Encrypt=false");
-            SqlMapper.AddTypeHandler(new DapperDateOnlyTypeHandler());
 
             _repository = new WeatherForecastRepository(dapperContext);
         }
@@ -64,7 +58,7 @@ namespace CleanArchitecture.Persistence.IntegrationTest
         }
 
         [Test]
-        public void InsertOrUpdateList_ShouldCallStoredProcedure()
+        public async Task InsertOrUpdateList_ShouldCallStoredProcedure()
         {
             var k = new WeatherForecastEntity { Date = DateOnly.FromDateTime(DateTime.Now), TemperatureC = 25, Summary = "SunnyTest" };
             k.CreateId();
@@ -78,15 +72,9 @@ namespace CleanArchitecture.Persistence.IntegrationTest
                 k1
             };
 
-            //_mockConnection
-            //    .Setup(c => c.Execute(It.IsAny<string>(), It.IsAny<object>(), null, null, CommandType.StoredProcedure))
-            //    .Verifiable();
-
             // Act
-            _repository.InsertOrUpdateList(mockList);
+            await _repository.InsertOrUpdateList(mockList);
 
-            // Assert
-            //_mockConnection.Verify(c => c.Execute(It.IsAny<string>(), It.IsAny<object>(), null, null, CommandType.StoredProcedure), Times.Once);
         }
     }
 

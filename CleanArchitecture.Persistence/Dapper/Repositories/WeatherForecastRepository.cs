@@ -72,7 +72,7 @@ namespace CleanArchitecture.Persistence.Dapper.Repositories
         }
 
 
-        public void InsertOrUpdateList(IEnumerable<IWeatherForecastEntity> myList)
+        public async Task InsertOrUpdateList(IEnumerable<IWeatherForecastEntity> myList)
         {
             using (var connection = context.CreateConnection())
             {
@@ -90,7 +90,7 @@ namespace CleanArchitecture.Persistence.Dapper.Repositories
                 var parameters = new DynamicParameters();
                 parameters.Add("@MyObjects", dt.AsTableValuedParameter("dbo.WeatherForecastType"));
 
-                connection.Execute("dbo.UpdateWeatherGodForecast", parameters, commandType: CommandType.StoredProcedure);
+                await connection.ExecuteAsync("dbo.UpdateWeatherGodForecast", parameters, commandType: CommandType.StoredProcedure);
             }
         }
 
