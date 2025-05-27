@@ -1,0 +1,1 @@
+﻿dotnet nuget push ../bin/Debug/CleanArchitecture.Persistence.1.0.0.11.nupkg --api-key key --source "https://nuget.pkg.github.com/MoritzLilleby"
