@@ -26,6 +26,8 @@ namespace CleanArchitecture.Persistence.EF.Repositories
 
         public async Task CreateNorseWeather()
         {
+            throw new NotImplementedException();
+
             var factory = new NorseWeatherGodVisitorFactory();
 
             var norseGod = factory.CreateRandomWeatherGodVisitor();

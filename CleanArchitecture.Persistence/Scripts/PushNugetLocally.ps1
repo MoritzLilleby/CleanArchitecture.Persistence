@@ -1,1 +1,1 @@
-﻿dotnet nuget push ../bin/Debug/CleanArchitecture.Persistence.1.0.0.11.nupkg -s c:\Packages
+﻿dotnet nuget push ../bin/Debug/CleanArchitecture.Persistence.1.0.0.12.nupkg -s c:\Packages
